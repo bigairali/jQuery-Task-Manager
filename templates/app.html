@@ -1,0 +1,211 @@
+<!-- 
+	Put the skeleton HTML for your Application here
+	DO NOT include <html>, <head>, or <body> tags
+	
+	Create a separate template for any repeatable components
+-->
+
+<div>
+
+<!-- APPLICATION -->		
+	<script type="text/template" id="template_app">
+	
+		<header class="khakibar">
+			<h1><a href="index.html">LocalityME</a></h1>
+		
+			<nav>
+				<a href="#nowhere" title="About">About</a>
+				<a href="#nowhere" title="Support">Support</a>
+				<a href="#nowhere" title="Contact">Contact</a>
+			</nav><!-- /#nav  -->
+
+			<div id="logout">
+					<ul>
+						<li>
+							<a id='currentUser' href="#">[if you can see this, something is wrong &gt;.&lt;]</a>
+						</li>
+						<li>
+							<a id="userLogout" href="#">Logout</a>
+						</li>
+						
+					</ul>
+			</div>
+		</header><!-- /header -->
+		
+		<section id="application">
+			
+			<table>
+				<thead>
+					<tr>
+						<th colspan="7">
+							<ul>
+								<li class="bargreen"><a class="prev" href="#prev"></a><a class="next" href="#next"></a><span class="month">May <span class="year">2012</span></span></li>
+								<li>
+									<ul class="week blackbar">
+										<li>Sunday</li>
+										<li>Monday</li>
+										<li>Tuesday</li>
+										<li>Wednesday</li>
+										<li>Thursday</li>
+										<li>Friday</li>
+										<li>Saturday</li>
+									</ul>
+								</li>
+							</ul>
+						</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td class="bottombar blackbar" colspan="7"></td>
+					</tr>
+				</tfoot>
+				<tbody id="days"></tbody>
+			</table>
+			
+		</section><!-- /main -->
+
+		<footer class="khakibar">
+			<p>2012 &copy; Copyright</p><p><a href="index.html" class="lowerlogo">LocalityME</a></p>
+			<ul>
+				<li><a id="tempGetTasks" href="#nowhere">Terms of Service</a></li>
+				<li><a href="#nowhere">Privacy Policy</a></li>
+			</ul>
+		</footer><!-- /footer -->
+	</script>
+
+
+
+	
+
+<!-- ADD NEW EVENT -->	
+	<script type="text/template" id="template_add_panel">
+	
+		
+			<div id="myModal" class="reveal-modal">
+				<div class="panel">
+					<h4 class="blackbar"><img src="img/pin_small.png" />New Event<a href="#" class="close close-panel"></a></h4>
+					<form id="addTask">
+					
+					<dl>
+						<dt><label for="titleInput">Title</label></dt>
+						<dd><input id="titleInput" maxlength="60" class="prefocus" type="input" name="title" placeholder="Enter Title of Event" /><span class="error-aside">XX letters left</span></dd>
+						<dt class="clear">Status</dt>
+						<dd>
+							<select>
+								<option>Normal</option>
+								<option>Urgent</option>
+								<option>Delayed</option>
+								<option>Finished</option>
+							</select>
+						</dd>
+						<dt class="clear">Description</dt>
+						<dd><textarea class="prefocus" name="description" maxlength="200" rows="3" placeholder="Enter a description of the event"></textarea><span class="error-block">You have XX letters left</span></dd>
+					</dl>
+					
+					<ul class="buttons clear">
+<!-- 						<li class="btn-cancel"><a class="close-panel" href="#">cancel</a></li> -->
+						<li class="btn-done"><button class="green-up" type="submit">Done</button></li>
+					</ul>
+					</form>
+				</div>
+			</div>
+		
+	
+	</script>
+
+	
+<!-- EDIT EVENT PANEL -->	
+	<script type="text/template" id="template_edit_panel">
+	
+	<div id="myModal" class="reveal-modal">
+		<section class="panel">
+			<h4 class="blackbar"><img src="img/pin_small.png" />Edit Event<a href="#" class="close edit-close"></a></h4>
+			<form id="editEvent">
+			
+			<dl>
+				<dt>Title</dt>
+				<dd><input id="titleInput" maxlength="60" type="input" name="title" placeholder="Enter Title of Event" /><span class="error-aside">XX letters left</span></dd>
+				<dt class="clear">Status</dt>
+				<dd>
+					<select>
+						<option>Normal</option>
+						<option>Urgent</option>
+						<option>Delayed</option>
+						<option>Finished</option>
+					</select>
+				</dd>
+				<dt class="clear">Description</dt>
+				<dd><textarea name="description" maxlength="200" rows="3" placeholder="Enter a description of the event"></textarea><span class="error-block">You have XX letters left</span></dd>
+			</dl>
+			
+			<ul class="buttons clear">
+<!-- 				<li class="btn-cancel edit-close"><a href="#">cancel</a></li> -->
+				<li class="btn-delete edit-delete"><button class="red-up" type="submit">Delete</button></li>
+				<li class="btn-done"><button class="green-up" type="submit">Done</button></li>
+			</ul>
+			</form>
+		</section>	
+	</div>	
+	</script>
+	
+	
+<!-- TUTORIAL -->	
+	<script type="text/template" id="template_tutorial_panel">
+	
+	<div id="myModal" class="reveal-modal">
+		<section class="tutorial">
+			<h4 class="blackbar"><img src="img/pin_small.png" />Tutorial<a href="#" class="close"></a></h4>
+			
+			<p class="text step1">Each date of the calendar is clickable. Once you click on a date, a new event will be added to that date and the 'Add Event' panel will pop up.</p>
+			<p class="text step2">Next, fill out the form and press done when you are finished.</p>
+			<p class="text step3">To edit an event, only a click on the event is nessacary.</p>
+			<p class="text step4">Each status has it's own unique color.</p>
+			<p class="text step5">If you ever need to move an event, just drag it to a new location.</p>
+			
+			<ul class="buttons clear">
+				<li class="btn-skip"><button class="yellow-up">Skip Tour</button></li>
+				<li class="btn-done"><button class="green-up">Next</button></li>
+			</ul>
+			<div class="arrow"></div>
+		</section>	
+	</div>
+	</script>	
+
+
+<!-- ACCOUNT INFO -->	
+	<script type="text/template" id="template_account_panel">
+	
+		<div id="myModal" class="reveal-modal">
+
+			<section class="accountpanel">
+				<h4 class="blackbar"><img src="img/pin_small.png" />Account Information<a href="#" class="close account-close"></a></h4>
+				<form id="accountInfo">
+				
+				<dl>
+					<dt>First Name</dt>
+					<dd><input type="input" restrict="a-zA-Z" name="first_name" placeholder="Enter Title of Event" /></dd>
+					<dt class="clear">Last Name</dt>
+					<dd><input type="input" restrict="a-zA-Z" name="last_name" placeholder="Enter Title of Event" /></dd>					
+					<dt class="clear">New Password</dt>
+					<dd><input  type="password" restrict="a-zA-Z0-9" name="newpass" placeholder="Enter new password" /><span class="error-aside">Passwords don't match.</span></dd>
+					<dt class="clear">Confirm</dt>
+					<dd><input type="password" restrict="a-zA-Z0-9" name="confirmpass" placeholder="Confirm new password" /><span class="error-aside">Passwords don't match.</span></dd>
+					<dt class="clear">Email</dt>
+					<dd><input type="input" name="email" placeholder="localityme@yourhouse.com" /><span class="error-aside">please enter valid email</span></dd>
+					<dt class="clear">Bio</dt>
+					<dd><textarea rows="3" placeholder="Enter a description of yourself"></textarea></dd>
+				</dl>
+				
+				<ul class="buttons clear">
+					<li class="btn-done"><button class="green-up" type="submit">Save</button></li>
+				</ul>
+				</form>
+			</section>
+		</div>
+	
+	</script>
+
+	<!-- more component templates here -->
+	
+</div>

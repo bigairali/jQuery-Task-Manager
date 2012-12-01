@@ -1,0 +1,17 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+  Student: Chris J. Whitman
+  Site: LocalityME.com
+  Twitter: 
+  Location: computer
+
+/* THANKS */
+  Name: Mike Smotherman
+  Description: Awesomest of the Awesome and stuff
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery, jsRender, jQueryUI, reveal
+  Software: Coda, Illustrator, Photoshop, Omnigraffle

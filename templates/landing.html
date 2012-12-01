@@ -1,0 +1,102 @@
+<!-- 
+	Put the skeleton HTML for your Landing page here
+	DO NOT include <html>, <head>, or <body> tags
+	
+	(don't remove the parent div)
+-->
+
+<div>
+	<script type="text/template" id="template_landing">
+		<header class="khakibar">
+			<h1><a href="index.html">LocalityME</a></h1>
+		
+			<nav>
+				<a href="application.html" title="About">About</a>
+				<a href="#nowhere" title="Support">Support</a>
+				<a href="#nowhere" title="Contact">Contact</a>
+			</nav><!-- /#nav  -->
+
+		
+			<div id="login">
+				<form method="get" action="#">
+					<ul>
+						<li>
+							<input type="text" placeholder="Username" name="loginUser" />
+						</li>
+						<li>
+							<input type="password" placeholder="Password" name="loginPass"  />
+						</li>
+						<li>
+							<button class="btn-login green-up" type="submit">Login</button>
+						</li>
+					</ul>
+				</form>
+				
+				<p><span class="error">Enter valid username or password</span><a href="#nowhere">forgot password?</a></p>
+			</div>
+		</header><!-- /header -->
+		
+		<!--[START]===Sign Up Banner -->		
+		<section>
+			<div id="banner">
+				<div id="logo"><img src="img/banner.png" /></div>
+			
+				<div id="signup">
+					<h2>Get Localized</h2>
+					<p><img src="img/clock.png" alt="Clock with no numbers in the 5 'o clock position">Sign up here in less than 60 seconds!</p>
+				
+					<form method="post" action="mailto:aerosakui@yahoo.com">
+						<ul>
+							<li>
+								<input type="text" placeholder="Email" name="email" />
+							</li>
+							<li>
+								<input type="password" placeholder="Password" name="regPass" />
+							</li>
+							<li><span class="error">Enter valid email or password</span><button class="btn-signup green-up" type="submit">Sign-Up</button></li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</section>
+<!--[END] - Sign Up Banner -->
+
+
+		<section id="main">
+			<ul>
+				<li class="keyinfo">
+					<ul>
+						<li><h3><span class="pin"></span>Intuitive</h3></li>
+						<li class="keyimage"><img src="img/list1.png" alt="Application first look preview" /></li>
+						<li>Just like a regular calendar except better, more room, color coded, but just as easy to use</li>
+					</ul>
+				</li>
+				<li class="keyinfo">
+					<ul>
+						<li><h3><span class="pin"></span>Drag and Drop</h3></li>
+						<li class="keyimage drag"><img src="img/list2.png" alt="Closer view of the drag and drop feature"/></li>
+						<li>Have an event that is going to happen sooner or later than originally planned? No sweat, just drag and drop that event in it's rightful place</li>
+					</ul>
+				</li>
+				<li class="keyinfo">
+					<ul>
+						<li><h3><span class="pin"></span>Businesses</h3></li>
+						<li class="keyimage"><img src="img/list3.png" alt="A preview of a business version feature"/></li>
+						<li>Want to invite people into a collaborative work schedule or event manager? Try our Business version</li>
+					</ul>
+				</li>
+			</ul>
+			
+			<div class="clear"></div>
+		</section><!-- /main -->
+		
+		<footer class="khakibar">
+			<p>2012 &copy; Copyright</p><p><a href="index.html" class="lowerlogo">LocalityME</a></p>
+			<ul>
+				<li><a href="#nowhere">Terms of Service</a></li>
+				<li><a href="#nowhere">Privacy Policy</a></li>
+			</ul>
+		</footer><!-- /footer -->
+		
+	</script>
+</div>
