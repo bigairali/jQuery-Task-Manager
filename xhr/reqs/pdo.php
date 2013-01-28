@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 class PDB{
 
 	private $dbhost = 'localhost';
-	private $dbport = '8889';
+	private $dbport = '3306';
 	private $dbname = 'dossier_db';
 	private $dbuser = 'root';
 	private $dbpass = 'root';

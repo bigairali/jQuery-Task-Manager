@@ -25,10 +25,10 @@
 	var tasks = {}; 
 	var openPanel = false;
 
-	
-	var currentMonthValue = Date.create(todayMonth).getMonth();
 	var todayMonth = Date.create().format('{Month}');
 	var todayYear = Date.create().format('{yyyy}');
+	
+	var currentMonthValue = Date.create(todayMonth).getMonth();
 	
 	
 /* For Future endeavors
@@ -405,6 +405,7 @@
 			dataType: 'json',
 			success: function(response){
 				tasks = response.tasks;
+								
 				if(!appLoaded){
 					populateCalendar();
 					appLoaded = true;
@@ -456,13 +457,17 @@
 	============================================== */
 	var renderMonth = function(start){
 		var tbody = $('#days');
+		var theMonth = $('.month');
+		
+		theMonth.html(todayMonth + " " + todayYear);
 		
 		var thisMonth = Date.create(start);
 		var monthLength = thisMonth.daysInMonth();
 		var startIndex = thisMonth.getDay();
 		var totalDays = monthLength + startIndex;
 		var maxDays = 35;
-		
+
+				
 		var html = '';
 		var dayBefore = startIndex;
 		
@@ -865,7 +870,7 @@
 				return false;
 			};
 		});
-		
+				
 		if(currentInfo.taskName.length < 20){
 			title = currentInfo.taskName;
 		}else{
@@ -963,7 +968,6 @@
 	
 	/* ========================= NOTIFICATION */
 	win.on('click', '.notif a', function(e){
-		console.log('Notif click')
 		$('.infoTip').fadeOut();
 		$('.overTasked').fadeOut();
 
