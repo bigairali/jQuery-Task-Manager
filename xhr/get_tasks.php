@@ -11,7 +11,7 @@ session_regenerate_id(false);
 
 require_once("reqs/common.php");
 require_once("reqs/pdo.php");
-//require_once("reqs/auth.php");
+require_once("reqs/auth.php");
 
 checkLoggedIn();
 
@@ -22,8 +22,8 @@ $db = $dbh->db;
 
 $projectIDs = $dbh->getValidProjects($userID);
 
-$projectID = param($_GET, 'projectID', $projectIDs);
-$tasks = $dbh->getTasks($projectID);
+$projectID = param($_GET, 'projectID', 35);
+$tasks = $dbh->getTasks($projectID, $userID);
 
 exitjson(array("tasks"=>$tasks));
 

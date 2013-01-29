@@ -24,11 +24,12 @@
 	var placeholders = $('input[placeholder], textarea[placeholder]').placeholder();
 	var tasks = {}; 
 	var openPanel = false;
+	
+	var currentMonthValue = Date.create(todayMonth).getMonth();
 
 	var todayMonth = Date.create().format('{Month}');
 	var todayYear = Date.create().format('{yyyy}');
 	
-	var currentMonthValue = Date.create(todayMonth).getMonth();
 	
 	
 /* For Future endeavors
@@ -228,12 +229,10 @@
 			url: 'xhr/logout.php',
 			type: 'get',
 			dataType: 'json',
-			success: function(response){
-				if(response.success){
-					loadLanding();
-				}
-			}
+			success: function(response){}
 		});
+		
+		loadLanding();
 	};
 	
 	
@@ -405,6 +404,9 @@
 			dataType: 'json',
 			success: function(response){
 				tasks = response.tasks;
+				
+				console.log(response, " JSON from the database");
+				
 								
 				if(!appLoaded){
 					populateCalendar();
@@ -520,14 +522,16 @@
 	
 	/* [RERENDER THE MONTH] Function
 	============================================== */
-	var changeMonth = function(){
+	var changeMonth = function(newValue){
 		appLoaded = false;
-		var currentMonthYear = Date.create().set({ month: currentMonthValue }).format('{Month} {yyyy}');
-		var nextMonth = Date.create().set({ month: currentMonthValue }).format('{Month}');
+		var currentMonthYear = Date.create().set({ month: newValue }).format('{Month} {yyyy}');
+		var newMonth = Date.create().set({ month: newValue }).format('{Month}');
+		var newYear = Date.create().set({ month: newValue }).format('{yyyy}');
 		
-		todayMonth = nextMonth;
-		
-		$('.month').text( currentMonthYear );
+		todayMonth = newMonth;
+		todayYear = newYear;
+				
+		$('.month').html( todayMonth + " " + todayYear );
 		renderMonth( currentMonthYear );
 	};
 	
@@ -929,9 +933,11 @@
 	
 	/* ========================= PREVIOUS MONTH */
 	win.on('click', '.prev', function(e){
+		console.log(currentMonthValue, ' before change');
 		currentMonthValue--;
+		console.log(currentMonthValue, ' after change');
 		
-		changeMonth();
+		changeMonth(currentMonthValue);
 		
 		e.preventDefault();
 		return false;
@@ -942,7 +948,7 @@
 	win.on('click', '.next', function(e){
 		currentMonthValue++;
 		
-		changeMonth();
+		changeMonth(currentMonthValue);
 		
 		e.preventDefault();
 		return false;

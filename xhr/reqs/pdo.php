@@ -242,7 +242,7 @@ class PDB{
 	}
 	
 	
-	public function getTasks($projectIDs){
+	public function getTasks($projectIDs, $taskCreator){
 	
 		$tasks = array();
 		
@@ -259,10 +259,9 @@ class PDB{
 				LEFT JOIN projects ON projects.id = tasks.projectID 
 				LEFT JOIN clients ON clients.id = projects.clientID 
 				LEFT JOIN users on users.id = tasks.taskeeID 
-				WHERE tasks.projectID IN ($pids)
-			");
+				WHERE tasks.projectID = 35 and taskCreator = ".$taskCreator);
 			$st->execute(array(
-				//":pids"=>$pids
+				":pids"=>$pids
 			));
 
 		}catch (PDOException $e){
